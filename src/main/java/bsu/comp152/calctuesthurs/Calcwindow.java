@@ -43,7 +43,7 @@ public class Calcwindow {
         numberDisplay.clear();
         lastOp = OperatorType.Divide;
     }
-//test
+
     @FXML
     public void addButtonPressed(){
         var numbertext = numberDisplay.getText();
