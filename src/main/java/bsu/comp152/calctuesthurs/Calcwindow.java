@@ -53,10 +53,16 @@ public class Calcwindow {
 
     @FXML
     public void equalButtonPressed(){
+        double result = 0.0;
         var currentNumberText = numberDisplay.getText();
         var currentNumber = Integer.parseInt(currentNumberText);
-        var sum = currentNumber + storedNumber;
-        numberDisplay.setText(""+sum);
+        switch (lastOp) {
+            case Add -> result = currentNumber + storedNumber;
+            case Subtract -> result = storedNumber - currentNumber;
+            case Multiply -> result = currentNumber * storedNumber;
+            case Divide -> result = storedNumber / currentNumber;
+        }
+        numberDisplay.setText(""+result);
     }
 
     @FXML
