@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 
 public class Calcwindow {
     private int storedNumber;
+    private OperatorType lastOp;
     @FXML
     private TextField numberDisplay;
 
@@ -17,6 +18,30 @@ public class Calcwindow {
         var currentNumberText = ButtonPressed.getText();
         var newText = currentText+currentNumberText;
         numberDisplay.setText(newText);
+    }
+
+    @FXML
+    public void subtractButtonPressed() {
+        var currentText = numberDisplay.getText();
+        storedNumber = Integer.parseInt(currentText);
+        numberDisplay.clear();
+        lastOp = OperatorType.Subtract;
+    }
+
+    @FXML
+    public void multiplyButtonPressed() {
+        var currentText = numberDisplay.getText();
+        storedNumber = Integer.parseInt(currentText);
+        numberDisplay.clear();
+        lastOp = OperatorType.Multiply;
+    }
+
+    @FXML
+    public void divideButtonPressed() {
+        var currentText = numberDisplay.getText();
+        storedNumber = Integer.parseInt(currentText);
+        numberDisplay.clear();
+        lastOp = OperatorType.Divide;
     }
 
     @FXML
